@@ -67,9 +67,8 @@ export default function App() {
   const [showToast, setShowToast] = useState(false);
   
   // --- 圖片設定 ---
-  const driveImageId = "1zbO02DurlPSmMLnipgPxp3fqrWtcLoWt";
-  const defaultImage = `https://lh3.googleusercontent.com/d/${driveImageId}`;
-  const fallbackImage = "https://images.unsplash.com/photo-1618588507085-c79565432917?q=80&w=1000&auto=format&fit=crop"; 
+  // 使用備用圖片連結，避免 Google Drive 擋圖
+  const defaultImage = "https://images.unsplash.com/photo-1618588507085-c79565432917?q=80&w=1000&auto=format&fit=crop"; 
   const [userImage, setUserImage] = useState(defaultImage);
   const fileInputRef = useRef(null);
 
@@ -675,4 +674,3 @@ export default function App() {
     </div>
   );
 }
-
