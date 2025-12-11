@@ -20,6 +20,10 @@ import {
   Bell
 } from 'lucide-react';
 
+// 👇 這裡就是關鍵！告訴程式去抓您上傳的圖片
+// 請務必確認您的圖片檔名是 avatar.jpg 並且放在 src 資料夾內
+import avatarImg from './avatar.jpg';
+
 // --- 雪花背景特效組件 ---
 const SnowEffect = () => {
   return (
@@ -67,9 +71,8 @@ export default function App() {
   const [showToast, setShowToast] = useState(false);
   
   // --- 圖片設定 ---
-  // 這裡已經換回您的厭世媽咪圖連結
-  const defaultImage = "https://lh3.googleusercontent.com/d/1zbO02DurlPSmMLnipgPxp3fqrWtcLoWt";
-  // 備用圖僅在連結失效時顯示
+  // 使用匯入的本地圖片，這是最穩定的方式！
+  const defaultImage = avatarImg;
   const fallbackImage = "https://images.unsplash.com/photo-1618588507085-c79565432917?q=80&w=1000&auto=format&fit=crop"; 
   
   const [userImage, setUserImage] = useState(defaultImage);
