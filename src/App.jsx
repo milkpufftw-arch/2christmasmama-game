@@ -20,10 +20,6 @@ import {
   Bell
 } from 'lucide-react';
 
-// 👇 這裡就是關鍵！告訴程式去抓您上傳的圖片
-// 請務必確認您的圖片檔名是 avatar.jpg 並且放在 src 資料夾內
-import avatarImg from './avatar.jpg';
-
 // --- 雪花背景特效組件 ---
 const SnowEffect = () => {
   return (
@@ -70,9 +66,10 @@ export default function App() {
   const [checkedCount, setCheckedCount] = useState(0);
   const [showToast, setShowToast] = useState(false);
   
-  // --- 圖片設定 ---
-  // 使用匯入的本地圖片，這是最穩定的方式！
-  const defaultImage = avatarImg;
+  // --- 圖片設定 (使用網址版，最穩定) ---
+  // 這是您指定的厭世哥德風圖片
+  const defaultImage = "https://i.postimg.cc/tsR8pGCC/IMG-7978.jpg"; 
+  // 備用圖
   const fallbackImage = "https://images.unsplash.com/photo-1618588507085-c79565432917?q=80&w=1000&auto=format&fit=crop"; 
   
   const [userImage, setUserImage] = useState(defaultImage);
